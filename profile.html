@@ -1,210 +1,176 @@
-
 <!DOCTYPE html>
-<html lang = "en">
-
-  <head>
-    <title>Shashank Khanna</title>
+<html lang="en">
+<head>
+ <title>Shashank Khanna</title>
     <meta name="description" content="Programmer.iOS Developer. Machine Learning Hobbyist. 
        Sophomore @ UCLA">
     <meta name="viewport" content="width=device-width">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <!--- This is labelled in the other file as index123.html ---> 
-   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><!-- Latest compiled and minified CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Optional theme -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="main.css" rel="stylesheet" />
+</head>
+<body>
+<!--- Have a movable menu bar here -->
+<div class="menu"><!-- Menu icon -->
+<div class="icon-close"><button aria-label="Left Align" class="btn btn-lg btn-custom" type="button"></button></div>
+<!-- Menu -->
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script type = text/javascript>
+// Wait for the page to load first
+        window.onload = function() {
 
-    
-    <link rel="stylesheet" href="main.css">
-   
-  </head>
+          //Get a reference to the link on the page
+          // with an id of "mylink"
+          var a = document.getElementById("mylink");
 
-  <body>
-   <!--- Have a movable menu bar here --> 
- 
-    <div class="menu">
-      
-      <!-- Menu icon -->
-      <div class="icon-close">
-          <button type="button" class="btn btn-lg btn-custom" aria-label="Left Align">
-  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> 
-    </button> 
-      </div>
+          //Set code to run when the link is clicked
+          // by assigning a function to "onclick"
+          a.onclick = function() {
+              alert("Contact me at shashank_khanna@outlook.com");
+            return false;
+          }
+        }
+</script>
 
-      <!-- Menu -->
-      <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <!--
+
+
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="http://www.github.com/pitai">Github</a></li>
+	<li><a href="#projects">Projects</a></li>
+	<li><a id = "mylink" href="contact.html">Contact</a></li>
+</ul>
+<!--
        <div class = "contact">
         <button type="button" class="btn btn-lg btn-custom" 
           data-toggle="popover" title="Contact" data-content="shashank.khanna@ucla.edu">Contact</button>
    
           </div>
-          --->
-    </div>
+          ---></div>
+<div class="icon-menu"><button aria-label="Left Align" class="btn btn-lg btn-custom" type="button"></button>  Learn More</div>
+<div id = "sketch-js"> <script src="sketch.js"></script>
+              <div class="container-special">
+<h1>Shashank Khanna.</h1>
 
-   
-    <div class = "jumbotron">
-      <div class="icon-menu">
-             <button type="button" class="btn btn-lg btn-custom" aria-label="Left Align">
-  <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
-    </button> 
-        Learn More
-      </div> 
-      
-      <div class="container">
+<p>Programmer. iOS/Web Developer.
+Sophomore @ UCLA.</p>
+</div>
+  
+        <script id = "whatever">
+
+        var COLOURS = [ 'rgba(255,255,255,.04)', '#A7EBCA', '#FFFFFF', '#D8EBA7', '#868E80' ];
+        var radius = 0;
+
+        Sketch.create({
+
+            container: document.getElementById( 'container' ),
+            autoclear: false,
+
+            setup: function() {
+                console.log( 'setup' );
+            },
+
+            update: function() {
+                radius = 2 + abs( sin( this.millis * 0.003 ) * 50 );
+            },
+
+            // Event handlers
+
+            keydown: function() {
+                if ( this.keys.C ) this.clear();
+            },
+
+            // Mouse & touch events are merged, so handling touch events by default
+            // and powering sketches using the touches array is recommended for easy
+            // scalability. If you only need to handle the mouse / desktop browsers,
+            // use the 0th touch element and you get wider device support for free.
+            touchmove: function() {
+
+                for ( var i = this.touches.length - 1, touch; i >= 0; i-- ) {
+
+                    touch = this.touches[i];
+
+                    this.lineCap = 'round';
+                    this.lineJoin = 'round';
+                    this.fillStyle = this.strokeStyle = COLOURS[ i % COLOURS.length ];
+                    this.lineWidth = radius;
+
+                    this.beginPath();
+                    this.moveTo( touch.ox, touch.oy );
+                    this.lineTo( touch.x, touch.y );
+                    this.stroke();
+                }
+            }
+        });
         
-        <h1>Shashank Khanna.</h1>
-        <p>Programmer. iOS/Web Developer. <br>
-           Machine Learning Hobbyist. <br>
-           Sophomore @ UCLA.<br>
-        </p>
-        </div>
-     </div>
-     
- 
- 
+        </script>
 
- 
-  <div class="articles container">
-    <h1> Experience. </h1>
-<a name = "experience"> </a>      
-      <div class="article">
-        <div class="item row">
-          <div class="col-xs-2">
-            <p class="source">AP LABS</p>
-          </div>
-          <div class="col-xs-3">
-            <p class="source">Engineering Intern - Summer/Spring Break 2015</p>
-          </div>
-          <div class="col-xs-5">
-            <p class="title">Early stage startup attempting to modernize mushroom farming</p>
-          </div>
-          <div class="col-xs-2">
-            <p class="pubdate">Mountain View / Malaysia</p>
-          </div>
         </div>
-        <div class="description row">
-          <div class="col-xs-2">&nbsp;</div>
-          <div class="col-xs-3">&nbsp;</div>
-          <div class="col-xs-5">
-            <p>Developed a website prototype to serve as a communication network between farmers and managers and hosts an agricultural database. 
-              I also implemented a program (and hardware using arduino) to automate watering of plants based on the humidity/temperature in the farm </p>
-          </div>
-          <div class="col-xs-2">&nbsp;</div>
-        </div>
-      </div>
- <div class="article">
-        <div class="item row">
-          <div class="col-xs-2">
-            <p class="source">Asia IIX/ Shujog</p>
-          </div>
-          <div class="col-xs-3">
-            <p class="source"> Corporate Finance Intern - Summer 2014</p>
-          </div>
-          <div class="col-xs-5">
-            <p class="title">Private Equity involved in Impact Investing</p>
-          </div>
-          <div class="col-xs-2">
-            <p class="pubdate">Singapore</p>
-          </div>
-        </div>
-        <div class="description row">
-          <div class="col-xs-2">&nbsp;</div>
-          <div class="col-xs-3">&nbsp;</div>
-          <div class="col-xs-5">
-            <p>Optimized spreadsheets to make it easier to categorize investors based on income, location and preference. Assisted social enterprises in modifying business plans to present to investors
-n. Created presentations (PowerPoint and Keynote) for client meetings and social entrepreneurship forums. Assisted in direct selling of products made by social enterprises</p>
-          </div>
-          <div class="col-xs-2">&nbsp;</div>
-        </div>
-      </div>
 
- <div class="article">
-        <div class="item row">
-          <div class="col-xs-2">
-            <p class="source">Symrise</p>
-          </div>
-          <div class="col-xs-3">
-            <p class="source">Maintainence Engineering / Lab Intern - Summer 2013</p>
-          </div>
-          <div class="col-xs-5">
-            <p class="title">Flavor and Fragrance Manufacturers</p>
-          </div>
-          <div class="col-xs-2">
-            <p class="pubdate">Singapore</p>
-          </div>
-        </div>
-        <div class="description row">
-          <div class="col-xs-2">&nbsp;</div>
-          <div class="col-xs-3">&nbsp;</div>
-          <div class="col-xs-5">
-            <p>Worked on improving battery life and efficiency of industrial weighing scales. Was responsible for designing and assembling voltage correctors.</p>
-          </div>
-          <div class="col-xs-2">&nbsp;</div>
-        </div>
-      </div>
 
-    </div>
-    
-     <div class="Projects container">
-       <a name = "projects"> </a> 
-       <h1> Projects </h1>
-      <div class="row-1">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="TappyBall.png" alt="Tap Ball">
-      <div class="caption">
-        <h3>Tap Ball</h3>
-        <p> An iOS game that allows users to guide the ball and avoid the blocks to win points </p>
-        <div class = "whaddup">
-        <p><a href="#" class="btn btn-default" role="button">Download from App Store</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
+
+<div class="articles container">
+<h1></h1>
 </div>
 
-    <div class="row-2">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="hungering logo.png" alt="Hungering">
-      <div class="caption">
-        <h3>Hungering</h3>
-        <p> An website and cross platform app that lets people share their cooking with each other </p>
-        <div class = "whaddup">
-        <p><a href="#" class="btn btn-default" role="button">Download from App Store</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="Projects-container"><a name="projects"> </a>
+
+<h1 style="font-weight:200">Projects</h1>
+
+<div class="row-1">
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail"><img alt="Tap Ball" src="TappyBall.png" />
+<div class="caption">
+<h3 style="font-weight:200">Tap Ball</h3>
+
+<p style="font-weight:200">An iOS game that allows users to guide the ball and avoid the blocks to win points</p>
+
+<div class="whaddup">
+<p><a class="btn btn-default" href="https://appsto.re/us/rd_a9.i" role="button">Download from App Store</a></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-    <div class="row-3">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="labby.png" alt="AP LABS Database - Home Page">
-      <div class="caption">
-        <h3>AP Labs Database</h3>
-        <p> Internal Website protoype I designed for AP Labs to manage their employees</p>
-        <div class = "whaddup">
-        <p><a href="forbid.html" class="btn btn-default" role="button">Home Page </a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
+<div class="row-2">
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail"><img alt="Hungering" src="hungering logo.png" />
+<div class="caption">
+<h3 style="font-weight:200">Hungering</h3>
 
-   
-   
-   
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+<p style="font-weight:200">A website and cross platform app that lets people share their cooking with each other</p>
+
+<div class="whaddup">
+<p><a class="btn btn-default" href="email.html" role="button">Currently Under Development</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row-3">
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail"><img alt="AP LABS Database - Home Page" src="labby.png" />
+<div class="caption">
+<h3 style="font-weight:200">XTradeChamp</h3>
+
+<p style="font-weight:200">An application for analyzing financial markets using machine learning</p>
+
+<div class="whaddup">
+<p><a class="btn btn-default" href="forbid.html" role="button"> Currently Under Development </a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="app.js"></script></body>
 </html>
